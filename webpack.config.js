@@ -11,6 +11,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 var isProduction = (process.env.NODE_ENV === 'production');
 
 module.exports = {
+    performance: {
+        hints: false
+    },
     context: path.resolve(__dirname, 'src'),
 
     entry: {
@@ -23,10 +26,11 @@ module.exports = {
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '../'
+        publicPath: 'dist/'
     },
 
     devServer: {
+        overlay: true,
         contentBase: './app',
     },
 
