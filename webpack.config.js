@@ -19,7 +19,7 @@ module.exports = {
     entry: {
         app: [
             './js/app.js',
-            './styles/_global-styles.scss'
+            './styles/_global-styles.scss',
         ],
     },
 

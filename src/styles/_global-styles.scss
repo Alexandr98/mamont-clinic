@@ -1,6 +1,127 @@
 @import 'varibles';
 @import '~bootstrap/scss/bootstrap';
 
-#id{
-  font-family: $robotoRegular;
+
+.menu-wrap {
+	position: fixed;
+	top: 0;
+	height: 1000px;
+	width: 350px;
+	margin-left: -3500px;
+	font-size: 1em;
+	font-weight: 700;
+	overflow: auto;
+	transition: .15s;
+  z-index: 10;
+    .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+    &__img{
+      margin: 40px 0;
+      display: flex;
+      cursor: pointer;
+    }
+  }
+  .menu{
+    padding: 0 0 80px 65px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .information{
+    height: 490px;
+  }
+}
+.menu-show {
+	margin-left: 0;
+  box-shadow: 4px 2px 15px 1px #e8e8e8;
+}
+.menu-sidebar {
+	position: relative;
+  top: 70px;
+  li {
+    padding: 10px 5px 0 0;
+    list-style-type: none;
+    font-size: 15px;
+    font-family: $robotoRegular;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #000;
+      font-size: 1.18em;
+      position: relative;
+      &:hover:before{
+        content: "\00B7";
+        position: absolute;
+        left: -10px;
+        color: #89b749;
+      }
+      &:hover{
+        color: #89b749;
+      }
+    }
+  }
+  .menu-item-has-children {
+    position: relative;
+    .sub-menu {
+      display: none;
+    }
+  }
+}
+
+/*Hamburger Button*/
+.toggle-button {
+	position: fixed;
+	width: 44px;
+	height: 40px;
+	top: 20px;
+	left: 20px;
+	padding: 4px;
+	transition: .15s;
+  z-index: 15;
+  &:hover{
+    cursor: pointer;
+  }
+  .menu-bar {
+    position: absolute;
+    border-radius: 2px;
+    width: 80%;
+    transition: .15s;
+  }
+  .menu-bar-top {
+    border: 4px solid #555;
+    border-bottom: none;
+    top: 0;
+  }
+  .menu-bar-middle {
+    height: 4px;
+    background-color: #555;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    top: 4px;
+  }
+  .menu-bar-bottom {
+    border: 4px solid #555;
+    border-top: none;
+    top: 22px;
+  }
+}
+.button-open {
+  left: 25px;
+  .menu-bar-top {
+    border-color: #000;
+    transform: rotate(45deg) translate(8px, 8px);
+    transition: .10s;
+  }
+  .menu-bar-middle {
+    background-color: #000;
+    transform: translate(230px);
+    transition: .10s ease-in;
+    opacity: 0;
+  }
+  .menu-bar-bottom {
+    border-color: #000;
+    transform: rotate(-45deg) translate(7px, -7px);
+    transition: .10s;
+  }
 }
