@@ -74,19 +74,34 @@ module.exports = {
 
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]',
-                        }
-                    }
-                ]
+                use: ExtractTextPlugin.extract({
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[path][name].[ext]',
+                            }
+                        },
+                        'font-loader'
+                    ]
+                })
             },
 
             {
                 test: /\.svg$/,
                 loader: 'svg-url-loader'
+            },
+
+            {
+                test: /\.(mov|mp4)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[path][name].[ext]'
+                            }
+                        }
+                    ]
             }
         ]
     },
@@ -99,7 +114,7 @@ module.exports = {
 
         }),
         new ExtractTextPlugin(
-            './css/[name].css'
+            './css/[name].css',
         ),
         new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin(
