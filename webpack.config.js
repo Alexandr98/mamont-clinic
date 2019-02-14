@@ -1,3 +1,4 @@
+
 const path = require('path');
 const webpack = require('webpack');
 
@@ -94,15 +95,16 @@ module.exports = {
 
             {
                 test: /\.(mov|mp4)$/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                name: '[path][name].[ext]'
-                            }
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]'
                         }
-                    ]
-            }
+                    }
+                ]
+            },
+
         ]
     },
 
@@ -119,7 +121,9 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin(
             [
-                { from: './img', to: 'img' }
+                { from: './img', to: 'img' },
+                { from: './video', to: 'video' },
+                { from: './fonts', to: 'fonts' }
             ],
             {
                 ignore: [
