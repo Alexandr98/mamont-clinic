@@ -1,5 +1,6 @@
 @import 'varibles';
 @import '~bootstrap/scss/bootstrap';
+@import "~animate.css/source/_base.css";
 
 .menu-wrap {
 	position: fixed;
@@ -190,13 +191,14 @@
   height:1080px;
   width:100%;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.3);
   &__videobcg {
-    position: relaive;
+    position: relative;
     min-width: 100%;
     z-index: 0;
+    filter: brightness(0.5);
   }
   .overlay{
+    display: none;
     position:absolute;
     top:430px;
     left:200px;

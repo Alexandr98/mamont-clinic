@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
 	var $toggleButton = $('.toggle-button'),
@@ -8,4 +7,6 @@ $(document).ready(function () {
 		$(this).toggleClass('button-open');
 		$menuWrap.toggleClass('menu-show');
 	});
+
+	$('.overlay').fadeIn(9000);
 });
