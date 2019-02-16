@@ -86,6 +86,7 @@
         color: #485ea2;
       }
       .fa-instagram {
+        color: #000;
         cursor: pointer;
         font-size: 20px;
       }
@@ -224,6 +225,7 @@
     justify-content: space-between;
     align-items: center;
     a {
+      cursor: pointer;
       font-size: 17px;
       font-family: $robotoRegular;
       color: #fff;
