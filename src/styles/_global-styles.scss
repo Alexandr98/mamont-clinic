@@ -1,107 +1,117 @@
-@import 'varibles';
-@import '~bootstrap/scss/bootstrap';
-@import "~animate.css/source/_base.css";
+@import "varibles";
+@import "~bootstrap/scss/bootstrap";
 
 .menu-wrap {
-	position: fixed;
-	top: 0;
-	height: 100%;
-	width: 350px;
-	margin-left: -350px;
-	font-size: 1em;
-	font-weight: 700;
-	overflow: auto;
-  transition: .15s;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 350px;
+  margin-left: -350px;
+  font-size: 1em;
+  font-weight: 700;
+  overflow: auto;
+  transition: 0.15s;
   background: #fff;
   z-index: 10;
-    .logo{
+  .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #e8e8e8;
-    &__img{
+    &__img {
       margin: 40px 0;
       display: flex;
       cursor: pointer;
     }
   }
-  .information{
+  .information {
     height: 490px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .information-wrap{
+    .information-wrap {
       width: 215px;
     }
-    &__adress{
-      margin-bottom: 30px;
-    }  
-    &__time{
+    &__adress {
       margin-bottom: 30px;
     }
-    &__phone{
+    &__time {
       margin-bottom: 30px;
     }
-    &__title{
+    &__phone {
+      margin-bottom: 30px;
+    }
+    &__title {
       display: flex;
       align-items: center;
       color: #89b749;
       padding-bottom: 5px;
-      img{
+      img {
         padding-right: 10px;
       }
     }
-    &__street{
-      p{
+    &__street {
+      p {
         margin-bottom: 0;
       }
     }
-    &__days{
+    &__days {
       width: 170px;
-      p{
+      p {
         display: flex;
         justify-content: space-between;
         margin-bottom: 0;
       }
     }
-    &__email{
-      a{
+    &__email {
+      a {
         color: #000;
         text-decoration: none;
       }
     }
-    &__numbers{
+    &__numbers {
       display: flex;
       flex-direction: column;
-      a{
+      a {
         color: #000;
         text-decoration: none;
+      }
+    }
+    &__social {
+      .fa-facebook-square {
+        cursor: pointer;
+        padding-right: 5px;
+        font-size: 20px;
+        color: #485ea2;
+      }
+      .fa-instagram {
+        cursor: pointer;
+        font-size: 20px;
       }
     }
   }
 }
 
-
-.menu{
+.menu {
   padding-left: 65px;
   margin-bottom: 0;
 }
 .menu-show {
-	margin-left: 0;
+  margin-left: 0;
   box-shadow: 2px 2px 10px 1px #e8e8e8;
 }
 .menu-sidebar {
-    height: 445px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #e8e8e8;
+  height: 445px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
   li {
     padding: 10px 5px 0 0;
     list-style-type: none;
     font-size: 15px;
     font-family: $robotoRegular;
-    &:first-child{
+    &:first-child {
       padding: 0;
     }
     a {
@@ -110,13 +120,13 @@
       color: #000;
       font-size: 1.18em;
       position: relative;
-      &:hover:before{
+      &:hover:before {
         content: "\00B7";
         position: absolute;
         left: -10px;
         color: #89b749;
       }
-      &:hover{
+      &:hover {
         color: #89b749;
       }
     }
@@ -131,22 +141,22 @@
 
 /*Hamburger Button*/
 .toggle-button {
-	position: fixed;
-	width: 44px;
-	height: 40px;
-	top: 20px;
-	left: 20px;
-	padding: 4px;
-	transition: .15s;
+  position: fixed;
+  width: 44px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  padding: 4px;
+  transition: 0.15s;
   z-index: 15;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
   .menu-bar {
     position: absolute;
     border-radius: 2px;
     width: 80%;
-    transition: .15s;
+    transition: 0.15s;
   }
   .menu-bar-top {
     border: 4px solid #dadada;
@@ -171,25 +181,25 @@
   .menu-bar-top {
     border-color: #dadada;
     transform: rotate(45deg) translate(8px, 8px);
-    transition: .10s;
+    transition: 0.1s;
   }
   .menu-bar-middle {
     background-color: #dadada;
     transform: translate(230px);
-    transition: .10s ease-in;
+    transition: 0.1s ease-in;
     opacity: 0;
   }
   .menu-bar-bottom {
     border-color: #dadada;
     transform: rotate(-45deg) translate(7px, -7px);
-    transition: .10s;
+    transition: 0.1s;
   }
 }
 
 .banner {
   position: relative;
-  height:1080px;
-  width:100%;
+  height: 1080px;
+  width: 100%;
   overflow: hidden;
   &__videobcg {
     position: relative;
@@ -197,11 +207,58 @@
     z-index: 0;
     filter: brightness(0.5);
   }
-  .overlay{
+  .overlay {
     display: none;
-    position:absolute;
-    top:430px;
-    left:200px;
-    z-index:1;
+    position: absolute;
+    top: 430px;
+    left: 200px;
+    z-index: 1;
   }
+  .contact-us {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      font-size: 17px;
+      font-family: $robotoRegular;
+      color: #fff;
+    }
+  }
+}
+
+.about {
+  width: 100%;
+  height: 500px;
+  .dentisy {
+    margin-top: 300px;
+    margin-left: 160px;
+    display: flex;
+    justify-content: space-between;
+    &__about {
+      width: 710px;
+      h1 {
+        text-transform: uppercase;
+        margin: 0;
+        padding-bottom: 60px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    &__video {
+      .videobcg {
+        height: 500px;
+        filter: brightness(0.8);
+      }
+    }
+  }
+}
+
+.our-specialist {
+  
 }

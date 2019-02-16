@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
 	var $toggleButton = $('.toggle-button'),
@@ -8,5 +9,5 @@ $(document).ready(function () {
 		$menuWrap.toggleClass('menu-show');
 	});
 
-	$('.overlay').fadeIn(9000);
+	$('.overlay').delay(5000).fadeIn(5000);
 });

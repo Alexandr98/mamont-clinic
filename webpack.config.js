@@ -113,6 +113,8 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
             jquery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery'
 
         }),
         new ExtractTextPlugin(
