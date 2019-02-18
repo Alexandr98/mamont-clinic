@@ -1,3 +1,5 @@
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize.min.js';
 
 $(document).ready(function () {
 
@@ -11,21 +13,23 @@ $(document).ready(function () {
 
 	$('.overlay').delay(5000).fadeIn(5000);
 
-	$(function(){
+	$(function () {
 		var front = $('.front'),
 			others = ['left', 'right'];
-		
-		$('.wrap').on('click', '.items', function() {
-		  var $this = $(this);
-		  
-		  $.each(others, function(i, cl) {
-			if ($this.hasClass(cl)) {
-			  front.removeClass('front').addClass(cl);
-			  front = $this;
-			  front.addClass('front').removeClass(cl);
-			}
-		  });
+
+		$('.wrap').on('click', '.items', function () {
+			var $this = $(this);
+
+			$.each(others, function (i, cl) {
+				if ($this.hasClass(cl)) {
+					front.removeClass('front').addClass(cl);
+					front = $this;
+					front.addClass('front').removeClass(cl);
+				}
+			});
 		});
-	  });
-	  
+	});
+
+	$('select').formSelect();
+
 });

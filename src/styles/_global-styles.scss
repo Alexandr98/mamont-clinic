@@ -263,6 +263,7 @@
 
 .our-specialist {
   width: 100%;
+  height: 965px;
   position: relative;
   margin-top: 275px;
   .wrap {
@@ -273,7 +274,7 @@
     &__carousel {
       position: absolute;
       top: 100px;
-      left: 750px;
+      left: 752px;
       margin: 0;
       padding: 0;
       li {
@@ -369,4 +370,8 @@
       }
     }
   }
+}
+
+.contact-us{
+
 }
