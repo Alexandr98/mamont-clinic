@@ -10,4 +10,22 @@ $(document).ready(function () {
 	});
 
 	$('.overlay').delay(5000).fadeIn(5000);
+
+	$(function(){
+		var front = $('.front'),
+			others = ['left', 'right'];
+		
+		$('.wrap').on('click', '.items', function() {
+		  var $this = $(this);
+		  
+		  $.each(others, function(i, cl) {
+			if ($this.hasClass(cl)) {
+			  front.removeClass('front').addClass(cl);
+			  front = $this;
+			  front.addClass('front').removeClass(cl);
+			}
+		  });
+		});
+	  });
+	  
 });
