@@ -387,10 +387,25 @@
             color: #9e9e9e;
           }
         }
+        .datepicker,
+        .timepicker {
+          width: 320px;
+          input::placeholder { 
+            color: #9e9e9e;
+           }
+          .picker {
+            font-size: 16px;
+            margin: 0;
+          }
+        }
         .modal {
-          height: 350px;
+          height: 348px;
         }
         .datepicker-modal {
+          z-index: 5000 !important;
+          top: 20% !important;
+        }
+        .timepicker-modal {
           z-index: 5000 !important;
           top: 20% !important;
         }
@@ -398,6 +413,9 @@
     }
     .input-field {
       width: 700px;
+      label{
+        font-size: 16px;
+      }
       button {
         width: 200px;
         height: 40px;
@@ -451,39 +469,42 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1890px) {
-  .our-specialist .wrap__carousel {
-    left: 680px;
-  }
-}
-@media only screen and (max-width: 1850px) {
-  .our-specialist .wrap__carousel {
-    left: 33%;
-  }
-}
-@media only screen and (max-width: 1770px) {
-  .our-specialist .wrap__carousel li {
-    height: 765px;
-    width: 595px;
-  }
-  .our-specialist .wrap__carousel .left {
-    left: -500px;
-  }
-  .our-specialist .wrap__carousel .right {
-    left: 500px;
-  }
-}
-@media only screen and (max-width: 1670px) {
-  .about{
-    height: auto;
-  }
-  .about .dentisy__video .videobcg {
-    height: 400px;
-  }
-  .about .dentisy__about p {
-    font-size: 14px;
-  }
-  .our-specialist{
-    margin-top: 175px;
-  }
-}
+// @media only screen and (max-width: 1890px) {
+//   .our-specialist .wrap__carousel {
+//     left: 680px;
+//   }
+// }
+// @media only screen and (max-width: 1850px) {
+//   .our-specialist .wrap__carousel {
+//     left: 33%;
+//   }
+// }
+// @media only screen and (max-width: 1770px) {
+//   .our-specialist .wrap__carousel li {
+//     height: 765px;
+//     width: 595px;
+//   }
+//   .our-specialist .wrap__carousel .left {
+//     left: -500px;
+//   }
+//   .our-specialist .wrap__carousel .right {
+//     left: 500px;
+//   }
+// }
+// @media only screen and (max-width: 1670px) {
+//   .about{
+//     height: auto;
+//   }
+//   .about .dentisy__video .videobcg {
+//     height: 400px;
+//   }
+//   .about .dentisy__about p {
+//     font-size: 14px;
+//   }
+//   .our-specialist{
+//     margin-top: 175px;
+//   }
+//   .contact__photo img {
+//     width: 645px;
+// }
+// }
