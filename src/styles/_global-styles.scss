@@ -95,7 +95,7 @@
 }
 
 .menu {
-  padding-left: 65px;
+  padding-left: 65px !important;
   margin-bottom: 0;
 }
 .menu-show {
@@ -142,7 +142,7 @@
 
 /*Hamburger Button*/
 .toggle-button {
-  position: fixed;
+  position: absolute;
   width: 44px;
   height: 40px;
   top: 20px;
@@ -323,22 +323,22 @@
             height: 40px;
             margin: 35px auto;
             background: rgba(0, 0, 0, 0.1);
-            color:#fff;
+            color: #fff;
             outline: none;
             text-transform: uppercase;
             border: 1px solid #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            &:hover{
+            &:hover {
               cursor: pointer;
             }
           }
-          &__skills{
+          &__skills {
             margin: 0 0 0 45px;
-            span{
+            span {
               padding-right: 30px;
-              &:last-child{
+              &:last-child {
                 padding-right: 0;
               }
               &:before {
@@ -372,6 +372,55 @@
   }
 }
 
-.contact-us{
-
+.contact {
+  margin: 85px 0 0 160px;
+  display: flex;
+  justify-content: space-between;
+  &__form {
+    .wrap-from {
+      width: 700px;
+      display: flex;
+      justify-content: space-between;
+      .left-form,
+      .right-form {
+        .input-field {
+          width: 320px;
+          .select-dropdown {
+            color: #9e9e9e;
+          }
+        }
+        .modal {
+          height: 350px;
+        }
+        .datepicker-modal {
+          z-index: 5000 !important;
+          top: 20% !important;
+        }
+      }
+    }
+    .input-field {
+      width: 700px;
+      button {
+        width: 200px;
+        height: 40px;
+        margin: 120px auto;
+        background: rgba(255, 255, 255, 0.1);
+        color: #000;
+        outline: none;
+        text-transform: uppercase;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &__photo {
+    img {
+      width: 785px;
+    }
+  }
 }

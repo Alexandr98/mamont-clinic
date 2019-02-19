@@ -179,19 +179,56 @@
             </ul>
         </div>
     </section>
-    <section class="contact-us">
-        <div class="contact-us__form">
-                <div class="input-field col s12">
+    <section class="contact">
+        <div class="contact__form">
+            <h1>Записаться на прием</h1>
+            <div class="wrap-from">
+                <div class="left-form">
+                    <div class="input-field">
+                        <label for="autocomplete-input">Ваше имя и фамилия*</label>
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                    </div>
+                    <div class="input-field">
                         <select>
-                          <option value="" disabled selected>Choose your option</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
+                            <option value="" disabled selected>Выберите услугу</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
                         </select>
-                        <label>Materialize Select</label>
-                      </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="autocomplete-input">Выберите желаемую дату*</label>
+                        <input type="text" class="datepicker">
+                    </div>
+                </div>
+                <div class="right-form">
+                    <div class="input-field">
+                        <label for="autocomplete-input">Ваш номер телефона*</label>
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                    </div>
+                    <div class="input-field">
+                        <select>
+                            <option value="" disabled selected>Выберите врача</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="autocomplete-input">Выберите желаемое время*</label>
+                        <input type="text" class="datepicker">
+                    </div>
+                </div>
+            </div>
+            <div class="input-field">
+                <label for="autocomplete-input">Cообщение</label>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <button>Отправить</button>
+            </div>
         </div>
-        <div class="contact-us__photo"></div>
+        <div class="contact__photo">
+            <img src="../dist/img/contact-us.png" alt="photo-form">
+        </div>
     </section>
     <footer></footer>
     <script src="../dist/js/app.js"></script>
