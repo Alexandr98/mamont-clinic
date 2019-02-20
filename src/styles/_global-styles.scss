@@ -138,7 +138,7 @@
 
 /*Hamburger Button*/
 .toggle-button {
-  position: absolute;
+  position: fixed;
   width: 44px;
   height: 40px;
   top: 20px;
@@ -390,13 +390,15 @@
         .datepicker,
         .timepicker {
           width: 320px;
-          input::placeholder { 
+          font-size: 16px;
+          margin: 0;
+          input::placeholder {
             color: #9e9e9e;
-           }
-          .picker {
-            font-size: 16px;
-            margin: 0;
           }
+          // .picker {
+          //   font-size: 16px;
+          //   margin: 0;
+          // }
         }
         .modal {
           height: 348px;
@@ -413,7 +415,7 @@
     }
     .input-field {
       width: 700px;
-      label{
+      label {
         font-size: 16px;
       }
       button {
@@ -475,17 +477,30 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1890px) {
-  .our-specialist .wrap__carousel {
-    left: 680px;
-  }
-}
-@media only screen and (max-width: 1850px) {
+@media only screen and (max-width: 1900px) {
   .our-specialist .wrap__carousel {
     left: 33%;
   }
 }
+
+@media only screen and (max-width: 1850px) {
+  .our-specialist .wrap__carousel {
+    left: 30.6%;
+  }
+}
 @media only screen and (max-width: 1770px) {
+  .about .dentisy__video .videobcg {
+    height: 400px;
+  }
+  .about .dentisy__about p {
+    font-size: 15px;
+  }
+  .our-specialist {
+    margin-top: 155px;
+  }
+  .our-specialist .wrap__carousel {
+    left: 33.6%;
+  }
   .our-specialist .wrap__carousel li {
     height: 765px;
     width: 595px;
@@ -498,8 +513,11 @@ footer {
   }
 }
 @media only screen and (max-width: 1670px) {
-  .about{
+  .about {
     height: auto;
+  }
+  .about .dentisy {
+    margin-top: 250px;
   }
   .about .dentisy__video .videobcg {
     height: 400px;
@@ -507,10 +525,292 @@ footer {
   .about .dentisy__about p {
     font-size: 14px;
   }
-  .our-specialist{
+  .our-specialist {
     margin-top: 175px;
   }
   .contact__photo img {
     width: 645px;
+  }
 }
+
+@media only screen and (max-width: 1530px) {
+  .banner .contact-us {
+    width: 350px;
+  }
+  .banner .overlay {
+    top: 330px;
+  }
+  .banner .overlay img {
+    width: 450px;
+  }
+  .banner .contact-us a {
+    font-size: 15px;
+  }
+  .menu {
+    padding-left: 95px !important;
+  }
+  .menu-wrap .information {
+    height: 450px;
+  }
+  .menu-wrap .information__title {
+    font-size: 14px;
+  }
+  .menu-wrap .information__adress,
+  .information__time,
+  .information__phone p,
+  a {
+    font-size: 14px;
+  }
+  .menu-sidebar {
+    height: 345px;
+  }
+  .menu-sidebar li a {
+    font-size: 1em;
+  }
+  .our-specialist .wrap__carousel li {
+    height: 700px;
+    width: 580px;
+  }
+  .our-specialist .wrap__carousel {
+    left: 31%;
+  }
+  .about .dentisy {
+    margin-top: 230px;
+    margin-left: 130px;
+  }
+  .about .dentisy__video .videobcg {
+    height: 350px;
+  }
+  .about .dentisy__about h1 {
+    padding-bottom: 35px;
+  }
+  .our-specialist {
+    margin-top: 155px;
+    height: 865px;
+  }
+  .our-specialist .wrap__text {
+    padding-left: 130px;
+  }
+  .our-specialist .wrap__carousel .front .about-user {
+    height: 200px;
+  }
+  .our-specialist .wrap__carousel .front .about-user h1 {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0 10px 0;
+  }
+  .our-specialist .wrap__carousel .front .about-user button {
+    margin: 15px auto;
+  }
+  .contact__photo img {
+    width: 590px;
+    height: 100%;
+  }
+  .contact {
+    margin: 75px 0 0 130px;
+    &__form {
+      .wrap-from {
+        width: 600px;
+        .left-form,
+        .right-form {
+          .input-field {
+            width: 280px;
+          }
+          .datepicker,
+          .timepicker {
+            width: 280px;
+            .picker {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .input-field {
+        width: 600px;
+        label {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .contact__form .input-field button {
+    margin: 70px auto;
+  }
+  footer {
+    height: 40px;
+  }
+  footer .left-content,
+  .rigth-content {
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .menu-sidebar li a:hover:before {
+    content: "\00B7";
+    position: absolute;
+    left: -10px;
+    color: #89b749;
+    bottom: -3px;
+  }
+  .menu {
+    padding-left: 95px !important;
+  }
+  .menu-wrap {
+    width: 300px;
+  }
+  .menu-wrap .information .information-wrap {
+    width: 160px;
+  }
+  .menu-wrap .information {
+    height: 450px;
+  }
+  .menu-wrap .information__days {
+    width: 140px;
+  }
+  .menu-wrap .information__title {
+    font-size: 12px;
+    padding-bottom: 2px;
+  }
+  .menu-wrap .information__adress,
+  .information__time,
+  .information__phone p,
+  a {
+    font-size: 12px;
+  }
+  .menu-sidebar {
+    height: 325px;
+  }
+  .menu-sidebar li a {
+    font-size: 0.8em;
+  }
+  .about .dentisy__about {
+    width: 610px;
+  }
+  .about .dentisy__about p {
+    font-size: 13px;
+  }
+  .our-specialist .wrap__carousel li {
+    height: 600px;
+    width: 540px;
+  }
+  .our-specialist .wrap__carousel .right {
+    left: 470px;
+  }
+  .our-specialist .wrap__carousel .left {
+    left: -470px;
+  }
+  .our-specialist .wrap__carousel .front .about-user h1 {
+    font-size: 16px;
+  }
+  .contact__photo img {
+    width: 550px;
+    height: 100%;
+  }
+  .contact {
+    &__form {
+      .wrap-from {
+        .left-form,
+        .right-form {
+          .datepicker-modal {
+            z-index: 5000 !important;
+            top: 10% !important;
+          }
+          .timepicker-modal {
+            z-index: 5000 !important;
+            top: 10% !important;
+          }
+        }
+      }
+    }
+  }
+  footer .left-content,
+  .rigth-content {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1370px) {
+  body {
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .about .dentisy__about {
+    width: 500px;
+  }
+  .about .dentisy__about p {
+    font-size: 12px;
+  }
+  .about .dentisy__about h1 {
+    padding-bottom: 18px;
+  }
+  .banner .contact-us {
+    width: 310px;
+  }
+  .banner .contact-us a {
+    font-size: 13px;
+  }
+  .banner .overlay img {
+    width: 400px;
+  }
+  .our-specialist .wrap__carousel li {
+    height: 570px;
+    width: 520px;
+  }
+  .our-specialist .wrap__carousel .right {
+    left: 450px;
+  }
+  .our-specialist .wrap__carousel .left {
+    left: -450px;
+  }
+  .our-specialist .wrap__carousel .front .about-user h1 {
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 15px 0 15px 0;
+  }
+  .our-specialist .wrap__carousel .front .about-user button {
+    margin: 10px auto;
+  }
+  .contact {
+    margin: 75px 0 0 130px;
+    &__form {
+      .wrap-from {
+        width: 540px;
+        .left-form,
+        .right-form {
+          .input-field {
+            width: 240px;
+            label {
+              font-size: 13px;
+            }
+            .select-dropdown {
+              font-size: 13px;
+            }
+          }
+          .datepicker,
+          .timepicker {
+            width: 240px;
+            font-size: 13px;
+          }
+        }
+      }
+      .input-field {
+        width: 540px;
+        label {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  .our-specialist {
+    margin-top: 155px;
+    height: 800px;
+  }
 }
