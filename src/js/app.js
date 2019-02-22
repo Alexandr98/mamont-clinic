@@ -1,5 +1,7 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
+import 'owl.carousel/dist/owl.carousel.min';
+
 
 $(document).ready(function () {
 
@@ -34,4 +36,19 @@ $(document).ready(function () {
 	$('.datepicker').datepicker();
 	$('.timepicker').timepicker();
 
+
+	$('.owl-carousel').children().each(function (index) {
+		$(this).attr('data-position', index);
+		
+	});
+
+	$('.owl-carousel').owlCarousel({
+		center: true,
+		loop: true,
+		items: 3,
+	});
+
+	$(document).on('click', '.owl-item>.photo', function () {
+		$('.owl-carousel').trigger('to.owl.carousel', $(this).data('position'));
+	});
 });

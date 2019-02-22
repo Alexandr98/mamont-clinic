@@ -1,5 +1,6 @@
-@import "varibles";
+@import "_varibles";
 @import "~bootstrap/scss/bootstrap";
+@import "~owl.carousel/dist/assets/owl.carousel.min.css";
 
 .menu-wrap {
   position: fixed;
@@ -200,11 +201,17 @@
   overflow: hidden;
   &__videobcg {
     position: relative;
+    right: 0;
+    bottom: 0;
     min-width: 100%;
     max-height: 100%;
     height: auto;
     width: auto;
     z-index: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     filter: brightness(0.5);
   }
   .overlay {
@@ -224,6 +231,7 @@
     justify-content: space-between;
     align-items: center;
     a {
+      text-decoration: none;
       cursor: pointer;
       font-size: 17px;
       font-family: $robotoRegular;
@@ -262,111 +270,93 @@
 
 .our-specialist {
   width: 100%;
-  height: 965px;
+  height: 1265px;
   position: relative;
-  margin-top: 275px;
-  .wrap {
-    &__text {
-      text-transform: uppercase;
-      padding-left: 160px;
-    }
-    &__carousel {
+  margin-top: 330px;
+  &__text {
+    text-transform: uppercase;
+    padding: 0 0 50px 160px;
+  }
+  .photo {
+    position: relative;
+    .about-user {
       position: absolute;
-      top: 100px;
-      left: 752px;
-      margin: 0;
-      padding: 0;
-      li {
-        list-style: none;
-        height: 865px;
-        width: 695px;
-        overflow: hidden;
-        background-size: 100%;
+      bottom: 0;
+      width: 100%;
+      height: 280px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      h1 {
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 40px 0 30px 0;
+      }
+      p {
+        text-align: center;
+        color: #9aaf44;
+      }
+      button {
+        width: 200px;
+        height: 40px;
+        margin: 35px auto;
+        background: rgba(0, 0, 0, 0.1);
+        color: #fff;
+        outline: none;
+        text-transform: uppercase;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:hover {
           cursor: pointer;
         }
-        img {
-          width: 100%;
-        }
       }
-
-      .items {
-        position: absolute;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-      }
-
-      .front {
-        z-index: 3000;
-        .about-user {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: 280px;
-          background: rgba(0, 0, 0, 0.5);
-          color: #fff;
-          h1 {
-            font-size: 24px;
-            text-align: center;
-            text-transform: uppercase;
-            margin: 40px 0 30px 0;
+      &__skills {
+        margin: 0 0 0 45px;
+        span {
+          padding-right: 30px;
+          &:last-child {
+            padding-right: 0;
           }
-          p {
-            text-align: center;
-            color: #9aaf44;
-          }
-          button {
-            width: 200px;
-            height: 40px;
-            margin: 35px auto;
-            background: rgba(0, 0, 0, 0.1);
+          &:before {
+            position: relative;
+            left: -5px;
+            content: "\2022";
             color: #fff;
-            outline: none;
-            text-transform: uppercase;
-            border: 1px solid #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            &:hover {
-              cursor: pointer;
-            }
-          }
-          &__skills {
-            margin: 0 0 0 45px;
-            span {
-              padding-right: 30px;
-              &:last-child {
-                padding-right: 0;
-              }
-              &:before {
-                position: relative;
-                left: -5px;
-                content: "\2022";
-                color: #fff;
-              }
-            }
           }
         }
       }
-      .left {
-        left: -600px;
-        z-index: 1000;
-        filter: brightness(0.4);
-        -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        transform: scale(0.75);
+    }
+  }
+  .owl-item.cloned.active {
+    .photo {
+      cursor: pointer;
+      margin: 6% 8%;
+      transition: margin 0.4s ease;
+      filter: brightness(0.4);
+      .about-user {
+        display: none;
       }
-      /*The right image.*/
-      .right {
-        left: 600px;
-        z-index: 1000;
-        filter: brightness(0.4);
-        -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        transform: scale(0.75);
-      }
+    }
+  }
+  .owl-item.active {
+    .photo {
+      cursor: pointer;
+      margin: 6% 8%;
+      transition: margin 0.5s ease;
+      filter: brightness(0.4);
+    }
+    .about-user {
+      display: none;
+    }
+  }
+  .owl-item.center > .photo {
+    cursor: auto;
+    margin: 0;
+    filter: brightness(1);
+    .about-user {
+      display: block;
     }
   }
 }
@@ -396,10 +386,6 @@
           input::placeholder {
             color: #9e9e9e;
           }
-          // .picker {
-          //   font-size: 16px;
-          //   margin: 0;
-          // }
         }
         .modal {
           height: 348px;
@@ -472,24 +458,11 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1920px) {
-  .our-specialist .wrap__carousel {
-    left: 712px;
-  }
-}
-
-@media only screen and (max-width: 1900px) {
-  .our-specialist .wrap__carousel {
-    left: 33%;
-  }
-}
-
-@media only screen and (max-width: 1850px) {
-  .our-specialist .wrap__carousel {
-    left: 30.6%;
-  }
-}
 @media only screen and (max-width: 1770px) {
+  .our-specialist {
+    width: 100%;
+    height: 1165px;
+  }
   .about .dentisy__video .videobcg {
     height: 400px;
   }
@@ -499,20 +472,8 @@ footer {
   .our-specialist {
     margin-top: 155px;
   }
-  .our-specialist .wrap__carousel {
-    left: 33.6%;
-  }
-  .our-specialist .wrap__carousel li {
-    height: 765px;
-    width: 595px;
-  }
-  .our-specialist .wrap__carousel .left {
-    left: -500px;
-  }
-  .our-specialist .wrap__carousel .right {
-    left: 500px;
-  }
 }
+
 @media only screen and (max-width: 1670px) {
   .about {
     height: auto;
@@ -531,6 +492,20 @@ footer {
   }
   .contact__photo img {
     width: 645px;
+  }
+}
+@media only screen and (max-width: 1570px) {
+  .banner .overlay img {
+    width: 450px;
+  }
+  .about .dentisy {
+    margin-left: 100px;
+  }
+  .our-specialist__text {
+    padding: 0 0 50px 100px;
+  }
+  .contact {
+    margin: 85px 0 0 100px;
   }
 }
 
@@ -568,17 +543,7 @@ footer {
   .menu-sidebar li a {
     font-size: 1em;
   }
-  .our-specialist .wrap__carousel li {
-    height: 700px;
-    width: 580px;
-  }
-  .our-specialist .wrap__carousel {
-    left: 31%;
-  }
-  .about .dentisy {
-    margin-top: 230px;
-    margin-left: 130px;
-  }
+
   .about .dentisy__video .videobcg {
     height: 350px;
   }
@@ -589,27 +554,12 @@ footer {
     margin-top: 155px;
     height: 865px;
   }
-  .our-specialist .wrap__text {
-    padding-left: 130px;
-  }
-  .our-specialist .wrap__carousel .front .about-user {
-    height: 200px;
-  }
-  .our-specialist .wrap__carousel .front .about-user h1 {
-    font-size: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 10px 0 10px 0;
-  }
-  .our-specialist .wrap__carousel .front .about-user button {
-    margin: 15px auto;
-  }
   .contact__photo img {
     width: 590px;
     height: 100%;
   }
   .contact {
-    margin: 75px 0 0 130px;
+    margin: 170px 0 0 100px;
     &__form {
       .wrap-from {
         width: 600px;
@@ -649,6 +599,18 @@ footer {
 }
 
 @media only screen and (max-width: 1450px) {
+  body{
+    h1{
+      font-size: 35px;
+    }
+  }
+  .about .dentisy__about h1 {
+    padding-bottom: 35px;
+    font-size: 35px;
+  }
+  .banner .overlay img {
+    width: 400px;
+  }
   .menu-sidebar li a:hover:before {
     content: "\2022";
     position: absolute;
@@ -693,18 +655,16 @@ footer {
   .about .dentisy__about p {
     font-size: 13px;
   }
-  .our-specialist .wrap__carousel li {
-    height: 600px;
-    width: 540px;
+  .our-specialist .photo .about-user {
+    height: 250px;
   }
-  .our-specialist .wrap__carousel .right {
-    left: 470px;
+  .our-specialist .photo .about-user h1 {
+    font-size: 18px;
+    margin: 25px 0 20px 0;
   }
-  .our-specialist .wrap__carousel .left {
-    left: -470px;
-  }
-  .our-specialist .wrap__carousel .front .about-user h1 {
-    font-size: 16px;
+  .our-specialist .photo .about-user__skills span {
+    padding-right: 20px;
+    font-size: 13px;
   }
   .contact__photo img {
     width: 550px;
@@ -757,22 +717,6 @@ footer {
   .banner .overlay img {
     width: 400px;
   }
-  .our-specialist .wrap__carousel li {
-    height: 570px;
-    width: 520px;
-  }
-  .our-specialist .wrap__carousel .right {
-    left: 450px;
-  }
-  .our-specialist .wrap__carousel .left {
-    left: -450px;
-  }
-  .our-specialist .wrap__carousel .front .about-user h1 {
-    font-size: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 15px 0 15px 0;
-  }
   .our-specialist .wrap__carousel .front .about-user button {
     margin: 10px auto;
   }
@@ -785,6 +729,9 @@ footer {
         .right-form {
           .input-field {
             width: 240px;
+            input {
+              height: 2.7rem;
+            }
             label {
               font-size: 13px;
             }
@@ -816,7 +763,51 @@ footer {
   }
 }
 
+@media only screen and (max-width: 1300px) {
+  .our-specialist .photo .about-user__skills {
+    margin: 0 0 0 10px;
+  }
+  .contact {
+    margin: 75px 0 0 100px;
+    &__form {
+      .wrap-from {
+        width: 530px;
+        .left-form,
+        .right-form {
+          .input-field {
+            width: 230px;
+            label {
+              font-size: 13px;
+            }
+            .select-dropdown {
+              font-size: 13px;
+            }
+          }
+          .datepicker,
+          .timepicker {
+            width: 230px;
+            font-size: 13px;
+          }
+        }
+      }
+      .input-field {
+        width: 530px;
+        label {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1270px) {
+  .banner__videobcg {
+    width: 1270px;
+  }
+  .banner .overlay {
+    top: 210px;
+    left: 150px;
+  }
   .menu-wrap {
     width: 260px;
   }
@@ -843,34 +834,6 @@ footer {
     color: #89b749;
     bottom: -2px;
   }
-  .our-specialist .wrap__carousel li {
-    height: 500px;
-    width: 480px;
-  }
-  .our-specialist .wrap__carousel .right {
-    left: 415px;
-  }
-  .our-specialist .wrap__carousel .left {
-    left: -415px;
-  }
-  .our-specialist .wrap__carousel .front .about-user h1 {
-    font-size: 13px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 15px 0 15px 0;
-  }
-  .our-specialist .wrap__carousel .front .about-user__skills span {
-    padding-right: 30px;
-    font-size: 12px;
-  }
-  .our-specialist .wrap__carousel .front .about-user button {
-    width: 180px;
-    height: 35px;
-    margin: 15px auto;
-  }
-  .our-specialist {
-    height: 650px;
-  }
   .contact__photo img {
     width: 500px;
     height: 100%;
@@ -880,27 +843,33 @@ footer {
     width: 180px;
     height: 35px;
   }
+  footer .left-content,
+  .rigth-content {
+    font-size: 11px;
+    img {
+      width: 100px;
+    }
+  }
   footer {
     height: 30px;
   }
 }
 
 @media only screen and (max-width: 1215px) {
+  .button-open {
+    left: 15px;
+  }
+  .banner .overlay img {
+    width: 350px;
+  }
+  .banner__videobcg {
+    width: 1215px;
+  }
   .about .dentisy__about p {
     font-size: 10px;
   }
   .about .dentisy__video .videobcg {
     height: 270px;
-  }
-  .our-specialist .wrap__carousel li {
-    height: 460px;
-    width: 440px;
-  }
-  .our-specialist .wrap__carousel .right {
-    left: 380px;
-  }
-  .our-specialist .wrap__carousel .left {
-    left: -380px;
   }
   .contact__photo img {
     width: 450px;
@@ -938,7 +907,39 @@ footer {
     font-size: 10px;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .our-specialist .photo .about-user {
+    height: 180px;
+  }
+  .our-specialist .photo .about-user h1 {
+    font-size: 16px;
+    margin: 20px 0 10px 0;
+  }
+  .our-specialist .photo .about-user__skills {
+    margin: 0 10px 0 10px;
+  }
+  .our-specialist .photo .about-user__skills span {
+    padding-right: 10px;
+    font-size: 13px;
+  }
+  .our-specialist .photo .about-user button {
+    width: 180px;
+    height: 30px;
+    margin: 20px auto;
+  }
+  .our-specialist .photo .about-user p {
+    margin: 0;
+  }
+}
 @media only screen and (max-width: 1100px) {
+  .banner__videobcg {
+    width: 1100px;
+  }
+  .banner .overlay {
+    top: 210px;
+    left: 150px;
+  }
   .our-specialist .wrap__carousel li {
     height: 460px;
     width: 390px;
@@ -962,6 +963,9 @@ footer {
         .right-form {
           .input-field {
             width: 220px;
+            input {
+              height: 2.5rem;
+            }
           }
           .datepicker,
           .timepicker {
@@ -980,11 +984,13 @@ footer {
       }
     }
   }
-  footer .rigth-content img{
+  footer .rigth-content img {
     width: 100px;
   }
 }
 
 @media only screen and (max-width: 1050px) {
-
+  .banner__videobcg {
+    width: 1045px;
+  }
 }

@@ -51,6 +51,7 @@ module.exports = {
                             loader: 'postcss-loader',
                             options: { sourceMap: true }
                         },
+                        'resolve-url-loader',
                         {
                             loader: 'sass-loader',
                             options: { sourceMap: true }
@@ -73,19 +74,27 @@ module.exports = {
                 ]
             },
 
+            // {
+            //     test: /\.(woff|woff2|eot|ttf|otf)$/,
+            //     use: ExtractTextPlugin.extract({
+            //         use: [
+            //             {
+            //                 loader: 'file-loader',
+            //                 options: {
+            //                     name: '[path][name].[ext]',
+            //                 }
+            //             },
+            //             'font-loader'
+            //         ]
+            //     })
+            // },
+
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                name: '[path][name].[ext]',
-                            }
-                        },
-                        'font-loader'
-                    ]
-                })
+                loader: "file-loader",
+                options: {
+                    name: '[path][name].[ext]',
+                }
             },
 
             {
