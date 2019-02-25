@@ -46,6 +46,19 @@ $(document).ready(function () {
 		center: true,
 		loop: true,
 		items: 3,
+		// autoplay:false,
+		responsive:{
+			0:{
+				items:2,
+				center: false,
+				// autoplay:true
+			},
+			901:{
+				items:3,
+				center: true,
+				// autoplay:true
+			}
+		}
 	});
 
 	$(document).on('click', '.owl-item>.photo', function () {
